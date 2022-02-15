@@ -1,0 +1,15 @@
+1.hashmap的底层数据结构，简单介绍一下
+2.concurrentHashmap
+3.多线程:线程之间如何通讯的
+4.多线程:线程得状态有哪几种
+5.简单说下用了哪些注解
+6.arraylist和linkedlist区别
+7.ioc和aop简单介绍下
+8.mysql如何解析的
+9.索引用到哪些，简单介绍下
+10.es了解么，底层原理说下
+11.aba问题简单说下
+12.arraylist如何扩容得
+13.integer和int之间的区别，如何区分的
+14.concurrenthashmap简单说下
+15.volatile
