@@ -1,3 +1,0 @@
-package interview.内部类;
-
-<?xml version="1.0" encoding="UTF-8"?><ureport><cell expand="None" name="A1" row="1" col="1" row-span="2"><cell-style font-size="10" bgcolor="240,246,250" align="center" valign="middle"><left-border width="1" style="solid" color="0,0,0"/><right-border width="1" style="solid" color="0,0,0"/><top-border width="1" style="solid" color="0,0,0"/><bottom-border width="1" style="solid" color="0,0,0"/></cell-style><simple-value><![CDATA[人员细类]]></simple-value></cell><cell expand="None" name="B1" row="1" col="2" row-span="2"><cell-style font-size="10" bgcolor="240,246,250" align="center" valign="m

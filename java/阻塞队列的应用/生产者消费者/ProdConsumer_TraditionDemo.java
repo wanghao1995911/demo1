@@ -6,47 +6,48 @@ import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
-class ShareData{
-    private Integer num=0;
-    private Lock lock= new ReentrantLock();
-    private Condition condition=lock.newCondition();
-    public void increment() throws Exception{
+class ShareData {
+    private Integer num = 0;
+    private Lock lock = new ReentrantLock();
+    private Condition condition = lock.newCondition();
+
+    public void increment() throws Exception {
         lock.lock();
         try {
-            while (num!=0){
+            while (num != 0) {
                 //等待
                 condition.await();
+                System.out.println(Thread.currentThread().getName()+"当前thread的线程");
             }
             //干活
             num++;
-            System.out.println(Thread.currentThread().getName()+"\t"+num);
+            System.out.println(Thread.currentThread().getName() + "\t" + num);
             //唤醒
             condition.signalAll();
 
         } catch (Exception e) {
 
-
-        }finally {
+        } finally {
             lock.unlock();
         }
 
     }
 
     //java多线程唤醒必须用while，防止虚假唤醒
-    public void decrement() throws Exception{
+    public void decrement() throws Exception {
         lock.lock();
         try {
-            while (num==0){
+            while (num == 0) {
                 //等待
                 condition.await();
             }
             //干活
             num--;
-            System.out.println(Thread.currentThread().getName()+"\t"+num);
+            System.out.println(Thread.currentThread().getName() + "\t" + num);
             //唤醒
             condition.signalAll();
         } catch (Exception e) {
-        }finally {
+        } finally {
             lock.unlock();
         }
     }
@@ -57,26 +58,26 @@ class ShareData{
  * @Date: 2022/2/11
  */
 //传统版
-    //线程 操作方法 资源类
-    // 判断 通知
+//线程 操作方法 资源类
+// 判断 通知
 
 public class ProdConsumer_TraditionDemo {
 
     public static void main(String[] args) {
-    ShareData shareData=new ShareData();
+        ShareData shareData = new ShareData();
 
-    new Thread(()->{
-        for (int i = 1; i < 5; i++) {
-            try {
-                shareData.increment();
-            } catch (Exception e) {
-                e.printStackTrace();
+        new Thread(() -> {
+            for (int i = 1; i < 5; i++) {
+                try {
+                    shareData.increment();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+
             }
+        }, "aa").start();
 
-        }
-    },"aa").start();
-
-        new Thread(()->{
+        new Thread(() -> {
             for (int i = 1; i < 5; i++) {
                 try {
                     shareData.decrement();
@@ -85,7 +86,7 @@ public class ProdConsumer_TraditionDemo {
                 }
 
             }
-        },"bb").start();
+        }, "bb").start();
 
     }
 }

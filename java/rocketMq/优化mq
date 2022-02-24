@@ -1,0 +1,20 @@
+rocktMq的优化：同步复制和异步复制是通过Broker配置文件里的brokerRole参数进行设置的，这个参数可以被设置成 ASYNC_MASTER、SYNC_MASTER、SLAVE三个值中的一个。
+
+异步同步可能存在数据丢失情况，如果存在数据在写入缓存时，服务器宕机，就可能存在数据丢失情况
+
+1.开启文件预热
+warmMapedFileEnable=true
+开启文件预热，避免日志文件在分配内存时缺页中断
+
+
+2.开启slave读权限
+slaveReadEnable=true
+消息占用物理内存的大小通过accessMessageInMemoryMaxRatio来配置默认为40%；如果消费的消息不在内存中，开启slaveReadEnable时会从slave节点读取；提高Master内存利用率
+
+3.
+
+
+
+
+
+

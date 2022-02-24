@@ -58,7 +58,6 @@ class MyResource {
 
 }
 
-
 public class Production_BlockQueueDemo {
 
     public static void main(String[] args) throws Exception {
