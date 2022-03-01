@@ -13,7 +13,7 @@ public class BlockingQueue {
 
     public static void main(String[] args) throws Exception {
 
-        //extracted1();
+        extracted1();
 
       //  extracted2();
 
