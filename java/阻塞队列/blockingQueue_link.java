@@ -11,9 +11,15 @@ public class blockingQueue_link {
 
     public static void main(String[] args) {
         LinkedBlockingQueue linkedBlockingQueue = new LinkedBlockingQueue(3);
-        linkedBlockingQueue.add("a");
-        linkedBlockingQueue.add("a");
-        linkedBlockingQueue.add("a");
+       linkedBlockingQueue.add("a");
+        linkedBlockingQueue.add("a1");
+        linkedBlockingQueue.add("a2");
+
+        System.out.println(linkedBlockingQueue.peek());
+
+
+
+
         System.out.println(linkedBlockingQueue.add("a"));
 
 
