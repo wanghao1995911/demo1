@@ -1,4 +1,4 @@
-package java8创建多线程;
+package java8.java8创建多线程;
 
 /**
  * @Author:wanghao

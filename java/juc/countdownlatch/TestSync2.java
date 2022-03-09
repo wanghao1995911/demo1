@@ -1,4 +1,4 @@
-package java8创建多线程;
+package juc.countdownlatch;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -55,7 +55,7 @@ class Horse implements Runnable {
  */
 public class HorseRace implements Runnable {
 
-    private static final int FINISH_LINE = 75;
+    private static final int FINISH_LINE = 10;
     private static List<Horse> horses = new ArrayList<Horse>();
     private static ExecutorService exec = Executors.newCachedThreadPool();
 
