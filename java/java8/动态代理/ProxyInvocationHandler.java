@@ -10,9 +10,10 @@ import java.lang.reflect.Method;
 public class ProxyInvocationHandler implements InvocationHandler {
     private Object target;
 
-    public ProxyInvocationHandler(Object target) {
+    public ProxyInvocationHandler() {
         this.target = target;
     }
+
 
     @Override
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
